@@ -5,10 +5,8 @@ const AboutMe = () => {
         <>
             <div id='resume'>
                 <h1>Praveenkumar Subramani</h1>
-                <p>
-                    📧 praveenkumarsubramani21@gmail.com<br />
-                    📞 +91 70929 97287
-                </p>
+                <p onClick={() => window.open("https://mail.google.com/mail/?view=cm&fs=1&to=praveenkumarsubramani21@gmail.com")}>📧 praveenkumarsubramani21@gmail.com</p>
+                <p onClick={() => window.open("tel:+917092997287")}>📞 +91 70929 97287</p>
 
                 <div className="section">
                     <h2>Career Objective</h2>

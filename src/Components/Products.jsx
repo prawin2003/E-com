@@ -1,23 +1,48 @@
 import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { IoTrashOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { removeProduct } from '../Store/productSlice';
+import { addItemToCart } from '../Store/cartSlice';
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+
 
 
 const Products = () => {
     const products = useSelector((state) => state.products);
     const [category, setCategory] = useState([]);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleDelete = (id) => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this product?");
+        if (!confirmDelete) return;
+        axios.delete(`http://localhost:8080/products/${id}`)
+            .then(() => {
+                dispatch(removeProduct(id));
+            })
+            .catch((error) => {
+                console.error("Error deleting product:", error);
+            });
+    };
+
+    const handleEdit = (product) => {
+        navigate(`/update-product`, { state: { product } });
+    };
+
+    const handleAddToCart = (product) => {
+        dispatch(addItemToCart(product));
+    };
 
     useEffect(() => {
-        console.log(products);
-        const uniqueCategories = products.map((product) => product.category)
-            .filter((value, index, self) => self.indexOf(value) === index);
+        const uniqueCategories = products.map((product) => product.category).filter((value, index, self) => self.indexOf(value) === index);
         setCategory(() => uniqueCategories);
     }, [products]);
 
-    console.log(category);
+
 
 
     return (
@@ -39,9 +64,9 @@ const Products = () => {
                                         <Card.Text>₹{product.price}</Card.Text>
                                     </Card.Body>
                                     <Card.Footer >
-                                        <IoTrashOutline />
-                                        <FiEdit />
-                                        <MdOutlineAddShoppingCart />
+                                        <IoTrashOutline onClick={() => handleDelete(product.id)} />
+                                        <FiEdit onClick={() => handleEdit(product)} />
+                                        <MdOutlineAddShoppingCart onClick={() => handleAddToCart(product)} />
                                     </Card.Footer>
                                 </Card>
 

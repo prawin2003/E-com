@@ -6,6 +6,7 @@ import Home from './Components/Home'
 import AboutMe from './Components/AboutMe'
 import Products from './Components/Products'
 import AddProduct from './Components/AddProduct'
+import UpdateProduct from './Components/UpdateProduct'
 import Cart from './Components/Cart'
 import { useEffect } from 'react'
 import axios from 'axios'
@@ -36,6 +37,7 @@ function App() {
         <Route path='/products' element={<Products />} />
         <Route path='/add-product' element={<AddProduct />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/update-product' element={<UpdateProduct />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>

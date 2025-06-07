@@ -19,7 +19,8 @@ const productSlice = createSlice({
         if (product.id === action.payload.id) {
           return {
             ...product,
-            ...action.payload.updates,
+            ...product.rating,
+            ...action.payload
           };
         }
         return product;
