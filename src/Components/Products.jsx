@@ -49,7 +49,7 @@ const Products = () => {
         <>
             {category.map((cat) => (
                 <div key={cat}>
-                    <h3>{cat.toUpperCase()}</h3>
+                    <h3 className='category-title'>{cat.toUpperCase()}</h3>
                     <div className='card-container' key={cat}>
                         {products.filter((product) => product.category === cat).map((product) => {
                             return (

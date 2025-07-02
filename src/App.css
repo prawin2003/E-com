@@ -40,3 +40,60 @@
   font-weight: 600;
 }
 
+
+#login-form{
+  display: grid;
+  max-width: 400px;
+  min-width: 200px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  background: #f6f8f8;
+}
+
+#login-form input{
+   width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+#login-form p{
+  
+  text-align: center;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+#register-form{
+  display: grid;
+  max-width: 400px;
+  min-width: 300px;
+  margin: 2rem auto;
+
+  border-radius: 12px;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  background: #f6f8f8;
+}
+
+#register-form input{
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+#register-form button{
+  margin: 0.5rem;
+  padding: 0.5rem 1.5rem;
+}
+#register-form p{
+  
+  text-align: center;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}

@@ -16,7 +16,9 @@
     margin-left: 30px;
 }
 
-
+.category-title{
+   margin: 1rem 1.5rem;
+}
 
 .card-container {
       display: flex;
@@ -52,6 +54,7 @@
    margin: 0 auto;
 }
 .card .card-body {
+   background-color: rgb(248, 245, 245);
    min-width: auto;
    min-height: 42%;
   max-width: 100%;

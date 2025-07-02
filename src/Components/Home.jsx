@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <>
-    <h2>ALL Products</h2>
+    <h2 className='category-title'>ALL Products</h2>
     <div className='card-container '>
       {products.map((product) => (
         <Card key={product.id}  >

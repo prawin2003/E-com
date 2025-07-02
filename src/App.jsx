@@ -7,11 +7,13 @@ import AboutMe from './Components/AboutMe'
 import Products from './Components/Products'
 import AddProduct from './Components/AddProduct'
 import UpdateProduct from './Components/UpdateProduct'
+import RegisterForm from './Components/RegisterForm'
 import Cart from './Components/Cart'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { initializer } from './Store/productSlice'
+import LoginForm from './Components/LoginForm'
 
 function App() {
   //const products = useSelector(state=>state.products)
@@ -38,6 +40,8 @@ function App() {
         <Route path='/add-product' element={<AddProduct />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/update-product' element={<UpdateProduct />} />
+        <Route path='/register' element={<RegisterForm />} />
+        <Route path='/login' element={<LoginForm />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>

@@ -24,8 +24,8 @@ const UpdateProduct = () => {
     const updatedProduct = {
       ...data,
       rating:{
-        rate: 2.4,
-        count: 0
+        rate: product ? product.rating.rate : 2.5,
+        count: product ? product.rating.count : 0
       }
     };
     axios.put(`http://localhost:8080/products/${product.id}`, updatedProduct)
