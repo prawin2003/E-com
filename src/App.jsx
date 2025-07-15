@@ -20,9 +20,10 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    axios.defaults.withCredentials = true; d
     axios.get('http://localhost:8080/products')
       .then(response => {
-        if(response.data) {
+        if (response.data) {
           dispatch(initializer(response.data));
         }
       })
